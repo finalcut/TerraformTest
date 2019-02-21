@@ -3,16 +3,16 @@ provider "aws" {
   secret_key = "${var.secret_key}"
   region = "${var.region}"
 }
-resource "aws_instance" "${var.vm_id}" {
+resource "aws_instance" "demo" {
   ami = "ami-b374d5a5"
   instance_type = "t2.micro"
   provisioner "local-exec"{
-    command = "echo ${aws_instance.example.public_ip} > ip_address.txt"
+    command = "echo ${aws_instance.demo.public_ip} > ip_address.txt"
   }
   tags = {
     Name = "${var.vm_name}"
   }
 }
 resource "aws_eip" "ip" {
-  instance = "${aws_instance.example.id}"
+  instance = "${aws_instance.demo.id}"
 }
