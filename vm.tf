@@ -33,5 +33,6 @@ resource "azurerm_virtual_machine" "wv_web" {
 
   tags {
     group = "${var.resource_group_name}"
+    mccoeid = "${var.vm_id}"
   }
 }

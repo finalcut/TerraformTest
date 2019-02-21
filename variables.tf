@@ -38,6 +38,9 @@ variable "subnet1_cidr" {
   description = "CIDR block for Subnet within a Virtual Network"
 }
 
+variable "vm_id" {
+  description = "Enter id from the MCCoE stack"
+}
 
 variable "vm_name" {
   description = "Enter name for the Linux VM"
