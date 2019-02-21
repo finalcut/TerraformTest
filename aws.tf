@@ -9,6 +9,9 @@ resource "aws_instance" "example" {
   provisioner "local-exec"{
     command = "echo ${aws_instance.example.public_ip} > ip_address.txt"
   }
+  tags = {
+    Name = "${var.vm_name}"
+  }
 }
 resource "aws_eip" "ip" {
   instance = "${aws_instance.example.id}"
