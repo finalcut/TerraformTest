@@ -11,6 +11,7 @@ resource "aws_instance" "demo" {
   }
   tags = {
     Name = "${var.vm_name}"
+    McCoeId = "${var.vm_id}"
   }
 }
 resource "aws_eip" "ip" {
