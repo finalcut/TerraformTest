@@ -3,7 +3,7 @@ provider "aws" {
   secret_key = "${var.secret_key}"
   region = "${var.region}"
 }
-resource "aws_instance" "example" {
+resource "aws_instance" "${var.vm_id}" {
   ami = "ami-b374d5a5"
   instance_type = "t2.micro"
   provisioner "local-exec"{
