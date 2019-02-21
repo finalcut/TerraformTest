@@ -32,6 +32,6 @@ resource "azurerm_virtual_machine" "wv_web" {
   }
 
   tags {
-    group = "${vars.resource_group_name}"
+    group = "${var.resource_group_name}"
   }
 }

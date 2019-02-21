@@ -5,7 +5,7 @@ resource "azurerm_public_ip" "la_pip" {
   public_ip_address_allocation = "static"
 
   tags {
-group = "LinuxAcademy"
+    group = "${var.resource_group_name}"
   }
 }
 
@@ -17,12 +17,12 @@ resource "azurerm_network_interface" "public_nic" {
 
   ip_configuration {
     name = "WV-Terraform-WebPrivate"
-    subnet_id = "${azurerm_subnet.la_subnet_1.id}"
+    subnet_id = "${azurerm_subnet.wv_subnet_1.id}"
     private_ip_address_allocation = "dynamic"
     public_ip_address_id= "${azurerm_public_ip.la_pip.id}"
   }
   tags {
-    group = "${vars.resource_group_name}"
+    group = "${var.resource_group_name}"
   }
 }
 
@@ -33,6 +33,6 @@ resource "azurerm_public_ip" "la_db_pip" {
   public_ip_address_allocation = "static"
 
   tags {
-    group = "${vars.resource_group_name}"
+    group = "${var.resource_group_name}"
   }
 }

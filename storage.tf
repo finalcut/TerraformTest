@@ -5,7 +5,7 @@ resource "azurerm_storage_account" "wv_storage" {
   account_type = "Standard_LRS"
 
   tags {
-    group = "${vars.resource_group_name}"
+    group = "${var.resource_group_name}"
   }
 }
 

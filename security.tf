@@ -16,6 +16,6 @@ resource "azurerm_network_security_group" "nsg_web" {
   }
 
   tags {
-    group = "${vars.resource_group_name}"
+    group = "${var.resource_group_name}"
   }
 }
