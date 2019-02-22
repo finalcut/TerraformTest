@@ -1,9 +1,9 @@
 /* Configure Azure Provider and declare all the Variables that will be used in Terraform configurations */
 provider "azurerm" {
-  subscription_id = "fab16bf0-7ccb-4903-8715-b97561451d2c"
-  client_id = "d80e1680-4373-4a06-a58d-371cd530f29d"
+  subscription_id = "${var.subscription_id}"
+  client_id = "${var.client_id}"
   client_secret = "${var.client_secret}"
-  tenant_id = "27654375-b435-4a86-b6f2-6c7b8d5f563e"
+  tenant_id = "${var.tenant_id}"
 }
 
 variable "subscription_id" {
