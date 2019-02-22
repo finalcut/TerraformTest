@@ -48,5 +48,8 @@ resource "azurerm_virtual_machine" "example" {
     ]
   }
 
-  tags = "${var.tags}"
+  tags = {
+    Name = "${var.vm_name}"
+    McCoeId = "${var.vm_id}"
+  }
 }

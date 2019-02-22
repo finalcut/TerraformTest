@@ -36,15 +36,6 @@ variable "vm_name" {
 variable "vm_id" {
   default = "GUID issued by API via MongoDb"
 }
-
-variable "tags" {
-  type        = "map"
-  default     = {
-    Name = "${var.vm_name}"
-    McCoeId = "${var.vm_id}"
-  }
-  description = "Any tags which should be assigned to the resources in this example"
-}
 variable "vm_password" {
   description = "Enter admin password to SSH into VM"
 }
