@@ -1,4 +1,3 @@
-/* Configure Azure Provider and declare all the Variables that will be used in Terraform configurations */
 provider "azurerm" {
   subscription_id = "${var.subscription_id}"
   client_id = "${var.client_id}"
@@ -22,34 +21,30 @@ variable "tenant_id" {
   description = "Enter Tenant ID / Directory ID of your Azure AD. Run Get-AzureSubscription to know your Tenant ID"
 }
 
+variable "prefix" {
+  description = "The Prefix used for all resources in this example"
+}
+
 variable "location" {
-  description = "The default Azure region for the resource provisioning"
-}
-
-variable "resource_group_name" {
-  description = "Resource group name that will contain various resources"
-}
-
-variable "vnet_cidr" {
-  description = "CIDR block for Virtual Network"
-}
-
-variable "subnet1_cidr" {
-  description = "CIDR block for Subnet within a Virtual Network"
-}
-
-variable "vm_id" {
-  description = "Enter id from the MCCoE stack"
+  description = "The Azure Region in which the resources in this example should exist"
 }
 
 variable "vm_name" {
-  description = "Enter name for the Linux VM"
+  description = "Name of Virtual Machine"
 }
 
-variable "vm_username" {
-  description = "Enter admin username to SSH into Linux VM"
+variable "vm_id" {
+  default = "GUID issued by API via MongoDb"
 }
 
+variable "tags" {
+  type        = "map"
+  default     = {
+    Name = "${var.vm_name}"
+    McCoeId = "${var.vm_id}"
+  }
+  description = "Any tags which should be assigned to the resources in this example"
+}
 variable "vm_password" {
   description = "Enter admin password to SSH into VM"
 }
