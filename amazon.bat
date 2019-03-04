@@ -3,8 +3,8 @@ IF %useProxy% == true (goto :proxy)
 :terraform
 echo "Start Terraform Steps"
 terraform init
-terraform plan -var "vm_id=%vmId%" -var "vm_name=%vmName%" -var "access_key=%awsAccessKey%" -var "secret_key=%awsSecretKey%" -out myPlan
-terraform apply -input=false myPlan
+terraform plan -var "vm_id=%vmId%" -var "vm_name=%vmName%" -var "access_key=%awsAccessKey%" -var "secret_key=%awsSecretKey%" -out %vmID%
+terraform apply -input=false %vmID%
 echo "End Terraform Steps"
 goto :eof
 
