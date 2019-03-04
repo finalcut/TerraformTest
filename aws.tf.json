@@ -27,7 +27,7 @@
       }
     },
     {
-      "aws_ip": {
+      "aws_eip": {
         "ip": {
           "instance": "${aws_instance.demo.id}"
         }
