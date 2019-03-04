@@ -4,7 +4,7 @@ provider "aws" {
   region = "${var.region}"
 }
 resource "aws_instance" "demo" {
-  instance_id = "${var.vm_id}"
+  key_name = "${var.vm_id}"
   ami = "ami-b374d5a5"
   instance_type = "t2.micro"
   provisioner "local-exec"{
