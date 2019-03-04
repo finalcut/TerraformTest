@@ -7,7 +7,7 @@ resource "aws_instance" "demo" {
   ami = "ami-b374d5a5"
   instance_type = "t2.micro"
   provisioner "local-exec"{
-    command = "echo ${aws_instance.demo.public_ip} > ip_address.txt"
+    command = "echo ${aws_instance.demo.public_ip}"
   }
   tags = {
     Name = "${var.vm_name}"
