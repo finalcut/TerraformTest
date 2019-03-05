@@ -5,12 +5,12 @@ variable "secret_key" {
   description = "Secret key provided by AWS"
 }
 variable "region" {
-  default = "us-east-1"
+  description = "aws region"
 }
 variable "vm_name" {
   description = "Name of Virtual Machine"
 }
 
 variable "vm_id" {
-  default = "GUID issued by API via MongoDb"
+  description = "GUID issued by API via MongoDb"
 }
