@@ -1,6 +1,6 @@
 locals {
   virtual_machine_name = "${var.prefix}-${var.vm_name}"
-  admin_username       = "testadmin"
+  admin_username       = "${var.vm_username}"
   admin_password       = "${var.vm_password}"
 }
 
