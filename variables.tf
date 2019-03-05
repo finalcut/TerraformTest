@@ -36,6 +36,10 @@ variable "vm_name" {
 variable "vm_id" {
   default = "GUID issued by API via MongoDb"
 }
-variable "vm_password" {
+variable "vm_username" {
   description = "Enter admin password to SSH into VM"
+}
+
+variable "admin_username" {
+  description = "Enter admin username to SSH into VM"
 }
