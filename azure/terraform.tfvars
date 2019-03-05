@@ -1,0 +1,6 @@
+location = "East US"
+prefix= "mccoe"
+tenant_id="59602822-d8fc-4b5f-ae56-1089ce12cb3c"
+subscription_id="aeb3b023-8090-4d17-a125-aae466735755"
+client_id="0a5876c7-ee94-4dc3-9008-3a1558eb41c3"
+vm_username="testadmin"
