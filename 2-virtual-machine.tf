@@ -36,7 +36,7 @@ resource "azurerm_virtual_machine" "example" {
   os_profile_linux_config {
     disable_password_authentication = false
   }
-
+/*
   provisioner "remote-exec" {
     connection {
       user     = "${local.admin_username}"
@@ -47,7 +47,7 @@ resource "azurerm_virtual_machine" "example" {
       "ls -la",
     ]
   }
-
+*/
   tags = {
     Name = "${var.vm_name}"
     McCoeId = "${var.vm_id}"
