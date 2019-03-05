@@ -1,5 +1,9 @@
-variable "access_key" {}
-variable "secret_key" {}
+variable "access_key" {
+  description = "Access key provided by AWS"
+}
+variable "secret_key" {
+  description = "Secret key provided by AWS"
+}
 variable "region" {
   default = "us-east-1"
 }
